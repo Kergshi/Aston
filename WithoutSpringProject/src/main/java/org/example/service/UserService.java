@@ -33,10 +33,6 @@ public class UserService {
 
     public UserOutGoingDto findById(long id) {
         User user = userRepository.findById(id);
-//        List<Post> posts = userRepository.findPostsByUserId(id);
-//        List<Album> albums = userRepository.findAllByAuthorId(id);
-//        user.setPosts(posts);
-//        user.setAlbums(albums);
         return userDtoMapper.mapToOutGoing(user);
     }
 
@@ -44,9 +40,4 @@ public class UserService {
         List<User> users = userRepository.findAll();
         return userDtoMapper.mapToUotGoings(users);
     }
-//
-//    public void addPost(Post post) {
-//        User author = post.getAuthor();
-//        author.getPosts().add(post);
-//    }
 }
